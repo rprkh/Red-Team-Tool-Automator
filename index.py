@@ -12,6 +12,7 @@ import src.wfuzz
 import src.curl 
 import src.httprint  
 import src.unicornscan  
+import src.photon
 
 def main():
     
@@ -33,8 +34,9 @@ def main():
         print("14. wfuzz")
         print("15. Curl")
         # print("16. httprint")
-        #print("17. Unicornscan")  
-        print("16. Quit")
+        #print("17. Unicornscan")
+        print("16. Photon")
+        print("17. Quit")
         
         choice = input("Enter your choice: ")
         
@@ -74,6 +76,8 @@ def main():
         # elif choice == "17":
         #     src.unicornscan.main()  
         elif choice == "16":
+            src.photon.main()
+        elif choice == "17":
             break
         else:
             print("Invalid choice. Please try again.")
