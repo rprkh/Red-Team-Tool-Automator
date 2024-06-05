@@ -24,58 +24,58 @@ def main():
     if ws_url:
         ws_url = get_flag_value("ws based URL")
 
-    proxy = get_user_input("proxy")
-    if proxy:
-        proxy = get_flag_value("proxy")
+    # proxy = get_user_input("proxy")
+    # if proxy:
+    #     proxy = get_flag_value("proxy")
 
-    verbose = get_user_input("verbose")
-    if verbose:
-        verbose = get_flag_value("verbose")
+    # verbose = get_user_input("verbose")
+    # if verbose:
+    #     verbose = get_flag_value("verbose")
 
-    ignore_invalid_ssl_certificate_flag = get_user_input("ignoring SSL certificate")
+    # ignore_invalid_ssl_certificate_flag = get_user_input("ignoring SSL certificate")
 
-    raw_output = get_user_input("raw output")
+    # raw_output = get_user_input("raw output")
 
-    text = get_user_input("text")
-    if text:
-        text = get_flag_value("text")
+    # text = get_user_input("text")
+    # if text:
+    #     text = get_flag_value("text")
 
-    eof_wait_time = get_user_input("EOF wait time")
-    if eof_wait_time:
-        eof_wait_time = get_flag_value("EOF wait time")
+    # eof_wait_time = get_user_input("EOF wait time")
+    # if eof_wait_time:
+    #     eof_wait_time = get_flag_value("EOF wait time")
 
-    timings = get_user_input("timings")
+    # timings = get_user_input("timings")
 
     command = "python websocket_client/wsdump.py"
 
     if ws_url:
         command += f" {ws_url}"
 
-    if proxy:
-        command += f" -p {proxy}"
+    # if proxy:
+    #     command += f" -p {proxy}"
 
-    if verbose:
-        command += f" -v {verbose}"
+    # if verbose:
+    #     command += f" -v {verbose}"
 
-    if ignore_invalid_ssl_certificate_flag:
-        command += f" -n"
+    # if ignore_invalid_ssl_certificate_flag:
+    #     command += f" -n"
 
-    if raw_output:
-        command += f" -r"
+    # if raw_output:
+    #     command += f" -r"
 
-    if text:
-        command += f" -t {text}"
+    # if text:
+    #     command += f" -t {text}"
 
-    if eof_wait_time:
-        command += f" --eof-wait {eof_wait_time}"
+    # if eof_wait_time:
+    #     command += f" --eof-wait {eof_wait_time}"
 
-    if timings:
-        command += f" --timings"
+    # if timings:
+    #     command += f" --timings"
 
     print(f"\nwebsocket-client command based on your input: {command}")
 
     try:
-        subprocess.run(command, shell=True, check=True)
+        subprocess.run(command + ' -v 2 -n -r -t "ping successful" --timings', shell=True, check=True)
     except subprocess.CalledProcessError as subprocess_command_execution_error:
         print("Error executing command:", subprocess_command_execution_error)
         print("Please re-enter the command:")
