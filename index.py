@@ -13,6 +13,10 @@ import src.curl
 import src.httprint  
 import src.unicornscan  
 import src.photon
+import src.feroxbuster
+import src.gospider
+import src.commix
+import src.httprobe
 
 def main():
     
@@ -36,7 +40,11 @@ def main():
         # print("16. httprint")
         #print("17. Unicornscan")
         print("16. Photon")
-        print("17. Quit")
+        print("17. Feroxbuster")
+        print("18. Gospider")
+        print("19. Commix")
+        print("20. Httprobe")
+        print("21. Quit")
         
         choice = input("Enter your choice: ")
         
@@ -78,6 +86,14 @@ def main():
         elif choice == "16":
             src.photon.main()
         elif choice == "17":
+            src.feroxbuster.main()
+        elif choice == "18":
+            src.gospider.main()
+        elif choice == "19":
+            src.commix.main()
+        elif choice == "20":
+            src.httprobe.main()
+        elif choice == "21":
             break
         else:
             print("Invalid choice. Please try again.")
