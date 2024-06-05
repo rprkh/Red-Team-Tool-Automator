@@ -29,16 +29,18 @@ else
     OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 fi
 
-echo "Install Hydra based on the distribution"
+# Install Hydra and SecLists based on the distribution
 case $OS in
     ubuntu|debian|kali)
-        apt-get install -y hydra || { echo "Failed to install Hydra. Please try again."; exit 1; }
+        apt-get update || { echo "Failed to update apt cache. Please check your internet connection or try again later."; exit 1; }
+        apt-get install -y hydra seclists || { echo "Failed to install Hydra or SecLists. Please try again."; exit 1; }
         ;;
     centos|rhel|fedora)
-        yum install -y hydra || { echo "Failed to install Hydra. Please try again."; exit 1; }
+        yum install -y hydra epel-release || { echo "Failed to install Hydra or EPEL release. Please try again."; exit 1; }
+        yum install -y seclists || { echo "Failed to install SecLists. Please try again."; exit 1; }
         ;;
     arch)
-        pacman -Sy --noconfirm hydra || { echo "Failed to install Hydra. Please try again."; exit 1; }
+        pacman -Sy --noconfirm hydra seclists || { echo "Failed to install Hydra or SecLists. Please try again."; exit 1; }
         ;;
     *)
         echo "Unsupported Linux distribution: $OS"
@@ -46,4 +48,4 @@ case $OS in
         ;;
 esac
 
-echo "Hydra installed successfully!"
+echo "Hydra and SecLists installed successfully!"

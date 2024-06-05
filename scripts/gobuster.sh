@@ -29,16 +29,16 @@ else
     OS=$(uname -s | tr '[:upper:]' '[:lower:]')
 fi
 
-echo "Install Gobuster based on the distribution"
+echo "Install Gobuster and Seclists based on the distribution"
 case $OS in
     ubuntu|debian|kali)
-        apt-get install -y gobuster || { echo "Failed to install Gobuster. Please try again."; exit 1; }
+        apt-get install -y gobuster seclists || { echo "Failed to install Gobuster or Seclists. Please try again."; exit 1; }
         ;;
     centos|rhel|fedora)
-        yum install -y gobuster || { echo "Failed to install Gobuster. Please try again."; exit 1; }
+        yum install -y gobuster seclists || { echo "Failed to install Gobuster or Seclists. Please try again."; exit 1; }
         ;;
     arch)
-        pacman -Sy --noconfirm gobuster || { echo "Failed to install Gobuster. Please try again."; exit 1; }
+        pacman -Sy --noconfirm gobuster seclists || { echo "Failed to install Gobuster or Seclists. Please try again."; exit 1; }
         ;;
     *)
         echo "Unsupported Linux distribution: $OS"
@@ -46,4 +46,4 @@ case $OS in
         ;;
 esac
 
-echo "Gobuster installed successfully!"
+echo "Gobuster and Seclists installed successfully!"
