@@ -357,7 +357,7 @@ if __name__ == "__main__":
 EOF
 
 # Test working of the help command
-python wsdump.py -h
+python3 wsdump.py -h
 
 # Check for command error
 if [ $? -ne 0 ]; then
