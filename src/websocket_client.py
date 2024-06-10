@@ -46,7 +46,7 @@ def main():
 
     # timings = get_user_input("timings")
 
-    command = "python websocket_client/wsdump.py"
+    command = "python3 websocket_client/wsdump.py"
 
     if ws_url:
         command += f" {ws_url}"

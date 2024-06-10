@@ -119,7 +119,7 @@ def main():
     # if use_wayback:
     #     use_wayback = "--wayback"
 
-    command = f"python Photon/photon.py -u {url}"
+    command = f"python3 Photon/photon.py -u {url}"
 
     # if use_cookie:
     #     command += f" {use_cookie}"

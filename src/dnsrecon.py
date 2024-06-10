@@ -123,7 +123,7 @@ def main():
     # valid_enumeration_types = ["std", "rvl", "brt", "srv", "axfr", "bing", "yand", "crt", "snoop", "tld", "zonewalk"]
     # enumeration_type = get_flag_value_with_options("type of enumeration to perform (std, rvl, brt, srv, axfr, bing, yand, crt, snoop, tld, zonewalk)", valid_enumeration_types)
     
-    command = "python dnsrecon/dnsrecon.py"
+    command = "python3 dnsrecon/dnsrecon.py"
     
     if domain:
         command += f" --domain {domain}"    
