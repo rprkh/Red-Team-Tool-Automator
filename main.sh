@@ -1,6 +1,6 @@
 #!/bin/bash
 
-scripts=("beef.sh" "metagoofil.sh" "theHarvester.sh" "whatweb.sh" "hydra.sh" "gobuster.sh" "reconng.sh" "nmap.sh" "nikto.sh" "dnsrecon.sh" "dnsenum.sh" "dirsearch.sh" "wfuzz.sh" "websocket-client.sh" "httprint.sh" "unicornscan.sh" "curl.sh", "photon.sh", "feroxbuster.sh", "gospider.sh", "commix.sh", "httprobe.sh")
+scripts=("beef.sh" "metagoofil.sh" "theHarvester.sh" "whatweb.sh" "hydra.sh" "gobuster.sh" "reconng.sh" "nmap.sh" "nikto.sh" "dnsrecon.sh" "dnsenum.sh" "dirsearch.sh" "wfuzz.sh" "websocket-client.sh" "httprint.sh" "unicornscan.sh" "curl.sh" "photon.sh" "feroxbuster.sh" "gospider.sh" "commix.sh" "httprobe.sh")
 
 while true; do
   echo "What tool do you want to install?"
