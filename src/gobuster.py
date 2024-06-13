@@ -26,13 +26,14 @@ def tftp_enum():
 
 def run_all_enums():
     website_url = input("Enter website URL for directory and vhost enumeration: ")
+    domain = input("Enter domain for subdomain enumeration: ")
+    tftp_server = input("Enter target TFTP server: ")
+    
     subprocess.run(['gobuster', 'dir', '-u', website_url, '-w', wordlist_path])
     subprocess.run(['gobuster', 'vhost', '-u', website_url, '-w', wordlist_path])
 
-    domain = input("Enter domain for subdomain enumeration: ")
     subprocess.run(['gobuster', 'dns', '-d', domain, '-w', wordlist_path, '--wildcard'])
 
-    tftp_server = input("Enter target TFTP server: ")
     subprocess.run(['gobuster', 'tftp', '-s', tftp_server, '-w', wordlist_path])
 
     s3_enum()
