@@ -7,6 +7,7 @@ def get_user_input(prompt, flag, command, is_required=False):
     return command
 
 def main():
+    print("Refer https://docs.google.com/document/d/1P_whor_76MX8dZYPRxul5Lx14QrLlCby/edit?usp=sharing&ouid=106471594549028288584&rtpof=true&sd=true to know how to use the tool")
     command = "commix"
     
     # Target URL
@@ -35,13 +36,13 @@ def main():
     command = get_user_input("Enter Injection payload suffix string (leave blank if not needed): ", "--suffix", command)
     
     # Extra headers
-    command = get_user_input("Enter Extra headers (leave blank if not needed): ", "--headers", command)
+    # command = get_user_input("Enter Extra headers (leave blank if not needed): ", "--headers", command)
     
     # Proxy to connect to the target URL
-    command = get_user_input("Enter proxy to connect to the target URL (leave blank if not needed): ", "--proxy", command)
+    # command = get_user_input("Enter proxy to connect to the target URL (leave blank if not needed): ", "--proxy", command)
     
     # Alternative OS shell
-    command = get_user_input("Enter alternative OS shell (leave blank if not needed): ", "--alter-shell", command)
+    # command = get_user_input("Enter alternative OS shell (leave blank if not needed): ", "--alter-shell", command)
     
     # Injection technique(s) to use
     command = get_user_input("Enter injection technique(s) to use (leave blank if not needed): ", "--technique", command)

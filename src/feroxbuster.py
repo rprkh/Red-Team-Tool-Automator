@@ -5,22 +5,22 @@ def main():
     command = ""
     
     # Ask if the user has an input file containing URLs
-    has_input_file = input("Do you have an input file containing URLs? (y/n): ").strip().lower()
-    if has_input_file == "y":
-        input_file = input("Please provide the path to the input file: ").strip()
-        command += f"cat {input_file} | feroxbuster --stdin"
-    else:
-        url = input("Please provide the URL: ").strip()
-        command += f"feroxbuster -u {url}"
+    # has_input_file = input("Do you have an input file containing URLs? (y/n): ").strip().lower()
+    # if has_input_file == "y":
+    #     input_file = input("Please provide the path to the input file: ").strip()
+    #     command += f"cat {input_file} | feroxbuster --stdin"
+    # else:
+    url = input("Please provide the URL: ").strip()
+    command += f"feroxbuster -u {url}"
     
     # Ask for the path to the wordlist
-    wordlist = input("Please provide the path to the wordlist: ").strip()
-    command += f" -w {wordlist}"
+    # wordlist = input("Please provide the path to the wordlist: ").strip()
+    # command += f" -w {wordlist}"
     
     # Ask if the user only wants URLs in the output
-    silent = input("Do you want only URLs in the output? (y/n): ").strip().lower()
-    if silent == "y":
-        command += " --silent"
+    # silent = input("Do you want only URLs in the output? (y/n): ").strip().lower()
+    # if silent == "y":
+    #     command += " --silent"
     
     # Ask if the user wants the scan to be recursive
     # recursive = input("Do you want the scan to be recursive? (y/n): ").strip().lower()

@@ -1,41 +1,42 @@
 import subprocess
 
+wordlist_path = "/usr/share/seclists/Discovery/Web-Content/raft-large-directories.txt"
+
 def directory_enum():
     website_url = input("Enter website URL: ")
-    wordlist_path = input("Enter path to wordlist: ")
     subprocess.run(['gobuster', 'dir', '-u', website_url, '-w', wordlist_path])
 
 def subdomain_enum():
     domain = input("Enter domain: ")
-    wordlist_path = input("Enter path to wordlist: ")
     subprocess.run(['gobuster', 'dns', '-d', domain, '-w', wordlist_path, '--wildcard'])
 
 def s3_enum():
-    wordlist_path = input("Enter path to wordlist: ")
     subprocess.run(['gobuster', 's3', '-w', wordlist_path])
 
 def vhost_enum():
     website_url = input("Enter website URL: ")
-    wordlist_path = input("Enter path to wordlist: ")
     subprocess.run(['gobuster', 'vhost', '-u', website_url, '-w', wordlist_path])
 
 def gcs_enum():
-    wordlist_path = input("Enter path to wordlist: ")
     subprocess.run(['gobuster', 'gcs', '-w', wordlist_path])
 
 def tftp_enum():
-    wordlist_path = input("Enter path to wordlist: ")
     tftp_server = input("Enter target TFTP server: ")
     subprocess.run(['gobuster', 'tftp', '-s', tftp_server, '-w', wordlist_path])
 
-def directory_and_subdomain_enum():
-    website_url = input("Enter website URL for directory enumeration: ")
-    wordlist_path_dir = input("Enter path to wordlist for directory enumeration: ")
-    subprocess.run(['gobuster', 'dir', '-u', website_url, '-w', wordlist_path_dir])
+def run_all_enums():
+    website_url = input("Enter website URL for directory and vhost enumeration: ")
+    subprocess.run(['gobuster', 'dir', '-u', website_url, '-w', wordlist_path])
+    subprocess.run(['gobuster', 'vhost', '-u', website_url, '-w', wordlist_path])
 
     domain = input("Enter domain for subdomain enumeration: ")
-    wordlist_path_sub = input("Enter path to wordlist for subdomain enumeration: ")
-    subprocess.run(['gobuster', 'dns', '-d', domain, '-w', wordlist_path_sub, '--wildcard'])
+    subprocess.run(['gobuster', 'dns', '-d', domain, '-w', wordlist_path, '--wildcard'])
+
+    tftp_server = input("Enter target TFTP server: ")
+    subprocess.run(['gobuster', 'tftp', '-s', tftp_server, '-w', wordlist_path])
+
+    s3_enum()
+    gcs_enum()
 
 def main():
     while True:
@@ -46,7 +47,7 @@ def main():
         print("4. VHost Enumeration")
         print("5. GCS Enumeration")
         print("6. TFTP Enumeration")
-        print("7. Directory and Subdomain Enumeration")
+        print("7. Run All Enumerations")
         print("8. Exit")
         choice = input("Enter your choice: ")
 
@@ -63,7 +64,7 @@ def main():
         elif choice == '6':
             tftp_enum()
         elif choice == '7':
-            directory_and_subdomain_enum()
+            run_all_enums()
         elif choice == '8':
             print("Exiting...")
             break

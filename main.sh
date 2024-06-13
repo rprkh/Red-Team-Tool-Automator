@@ -1,10 +1,10 @@
 #!/bin/bash
 
-scripts=("beef.sh" "metagoofil.sh" "theHarvester.sh" "whatweb.sh" "hydra.sh" "gobuster.sh" "reconng.sh" "nmap.sh" "nikto.sh" "dnsrecon.sh" "dnsenum.sh" "dirsearch.sh" "wfuzz.sh" "websocket-client.sh" "httprint.sh" "unicornscan.sh" "curl.sh" "photon.sh" "feroxbuster.sh" "gospider.sh" "commix.sh" "httprobe.sh")
+scripts=("beef.sh" "metagoofil.sh" "theHarvester.sh" "whatweb.sh" "hydra.sh" "gobuster.sh" "reconng.sh" "nmap.sh" "nikto.sh" "dnsrecon.sh" "dnsenum.sh" "dirsearch.sh" "wfuzz.sh" "websocket-client.sh" "httprint.sh" "unicornscan.sh" "curl.sh" "photon.sh" "feroxbuster.sh" "gospider.sh" "commix.sh")
 
 while true; do
   echo "What tool do you want to install?"
-  select choice in "beef" "metagoofil" "theHarvester" "whatWeb" "hydra" "gobuster" "reconng" "nmap" "nikto" "dnsrecon" "dnsenum" "dirsearch" "wfuzz" "websocket-client" "httprint" "unicornscan" "curl" "photon" "feroxbuster" "gospider" "commix" "httprobe" "install_all" "exit"; do
+  select choice in "beef" "metagoofil" "theHarvester" "whatWeb" "hydra" "gobuster" "reconng" "nmap" "nikto" "dnsrecon" "dnsenum" "dirsearch" "wfuzz" "websocket-client" "httprint" "unicornscan" "curl" "photon" "feroxbuster" "gospider" "commix" "install_all" "exit"; do
     case "$choice" in
       "exit")
         echo "Exiting..."

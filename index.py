@@ -16,7 +16,6 @@ import src.photon
 import src.feroxbuster
 import src.gospider
 import src.commix
-import src.httprobe
 
 def main():
     
@@ -43,8 +42,8 @@ def main():
         print("17. Feroxbuster")
         print("18. Gospider")
         print("19. Commix")
-        print("20. Httprobe")
-        print("21. Quit")
+        # print("20. Httprobe")
+        print("20. Quit")
         
         choice = input("Enter your choice: ")
         
@@ -91,9 +90,9 @@ def main():
             src.gospider.main()
         elif choice == "19":
             src.commix.main()
+        # elif choice == "20":
+        #     src.httprobe.main()
         elif choice == "20":
-            src.httprobe.main()
-        elif choice == "21":
             break
         else:
             print("Invalid choice. Please try again.")

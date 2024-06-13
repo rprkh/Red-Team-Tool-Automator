@@ -8,16 +8,16 @@ def get_input(prompt, choices=None):
     return input(prompt)
 
 def main():
-    command = "sudo docker run gospider"
+    command = "gospider"
 
     # Ask user if they want to input a single URL or a list
-    url_choice = get_input("Do you want to input a single URL or have a list", ["single", "list"])
-    if url_choice == "single":
-        url = input("Enter the URL: ")
-        command += f' -s "{url}"'
-    else:
-        list_path = input("Enter the path to the list: ")
-        command += f' -S {list_path}'
+    # url_choice = get_input("Do you want to input a single URL or have a list", ["single", "list"])
+    # if url_choice == "single":
+    url = input("Enter the URL: ")
+    command += f' -s "{url}"'
+    # else:
+    #     list_path = input("Enter the path to the list: ")
+    #     command += f' -S {list_path}'
 
     # Ask if the user wants only URLs in the output
     # only_urls = get_input("Do you want only URLs in output", ["y", "n"])
