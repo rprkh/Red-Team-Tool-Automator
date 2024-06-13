@@ -27,13 +27,13 @@ def main():
         command += f' --data="{data}"'
     
     # Web server document root directory
-    command = get_user_input("Enter web server document root directory (leave blank if not needed): ", "--web-root", command)
+    # command = get_user_input("Enter web server document root directory (leave blank if not needed): ", "--web-root", command)
     
     # Injection payload prefix string
-    command = get_user_input("Enter Injection payload prefix string (leave blank if not needed): ", "--prefix", command)
+    # command = get_user_input("Enter Injection payload prefix string (leave blank if not needed): ", "--prefix", command)
     
     # Injection payload suffix string
-    command = get_user_input("Enter Injection payload suffix string (leave blank if not needed): ", "--suffix", command)
+    # command = get_user_input("Enter Injection payload suffix string (leave blank if not needed): ", "--suffix", command)
     
     # Extra headers
     # command = get_user_input("Enter Extra headers (leave blank if not needed): ", "--headers", command)
