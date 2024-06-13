@@ -31,20 +31,20 @@ def main():
         command = f"hydra -L {username_file} -P {password_file} {service}://{website} \":{username_field}=^USER^&{password_field}=^PASS^&{submit_field}=Submit\" -V -t {threads}"
 
     else:
-        host_option = prompt_input("Enter 'single' for one host or 'multiple' for multiple hosts")
+        # host_option = prompt_input("Enter 'single' for one host or 'multiple' for multiple hosts")
         command = f"hydra {service}"
 
-        if host_option == "single":
-            host_ip = prompt_input("Enter host IP")
-            port = prompt_input("Enter port")
-            command += f"://{host_ip}:{port}"
+        # if host_option == "single":
+        host_ip = prompt_input("Enter host IP")
+        port = prompt_input("Enter port")
+        command += f"://{host_ip}:{port}"
 
         threads = prompt_input("Enter number of threads")
         command += f" -L {username_file} -P {password_file} -V -t {threads}"
 
-        if host_option == "multiple":
-            host_file = prompt_input("Enter path to host file")
-            command += f" -M {host_file}"
+        # if host_option == "multiple":
+        #     host_file = prompt_input("Enter path to host file")
+        #     command += f" -M {host_file}"
 
     run_command(command)
 
