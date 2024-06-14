@@ -45,7 +45,7 @@ def main():
     # command = get_user_input("Enter alternative OS shell (leave blank if not needed): ", "--alter-shell", command)
     
     # Injection technique(s) to use
-    command = get_user_input("Enter injection technique(s) to use (leave blank if not needed): ", "--technique", command)
+    # command = get_user_input("Enter injection technique(s) to use (leave blank if not needed): ", "--technique", command)
     
     # Shellshock injection module
     # shellshock_needed = input("Do you want to use the Shellshock injection module? (y/n): ").strip().lower()
