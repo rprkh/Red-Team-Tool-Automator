@@ -48,9 +48,9 @@ def main():
     command = get_user_input("Enter injection technique(s) to use (leave blank if not needed): ", "--technique", command)
     
     # Shellshock injection module
-    shellshock_needed = input("Do you want to use the Shellshock injection module? (y/n): ").strip().lower()
-    if shellshock_needed == 'y':
-        command += ' --shellshock'
+    # shellshock_needed = input("Do you want to use the Shellshock injection module? (y/n): ").strip().lower()
+    # if shellshock_needed == 'y':
+    #     command += ' --shellshock'
     
     # Level of tests to perform
     # level = input("Enter the level of tests to perform (1-3, Default: 1): ").strip()
