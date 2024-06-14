@@ -21,7 +21,7 @@ def main():
     
     while True:
         print("Select an option:")
-        print("1. Running metagoofil")
+        print("1. metagoofil")
         print("2. wget")
         print("3. whatweb")
         print("4. Nmap")
