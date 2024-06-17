@@ -3,7 +3,9 @@ import time
 import os
 import urllib.request
 
-def run_nmap(target):
+def run_nmap():
+    target = input("Enter the target for Nmap: ")
+
     print("\n--- Starting Nmap SYN Scan (-sS) ---")
     subprocess.run(["nmap", "-sS", target])
     time.sleep(15)
@@ -20,12 +22,16 @@ def run_nmap(target):
     subprocess.run(["nmap", "-A", target])
     time.sleep(15)
 
-def run_nikto(target_url):
+def run_nikto():
+    target_url = input("Enter the target URL for Nikto: ")
+
     print("\n--- Starting Nikto Scan ---")
     subprocess.run(["nikto", "-h", target_url])
     time.sleep(15)
 
-def run_sqlmap(target_url):
+def run_sqlmap():
+    target_url = input("Enter the target URL for SQLMap: ")
+
     print("\n--- Starting SQLMap Basic SQL Injection ---")
     subprocess.run(["sqlmap", "-u", target_url])
     time.sleep(15)
@@ -38,7 +44,9 @@ def run_sqlmap(target_url):
     subprocess.run(["sqlmap", "-u", target_url, "--dbms=mysql"])
     time.sleep(15)
 
-def run_dnsrecon(domain):
+def run_dnsrecon():
+    domain = input("Enter the domain for DNSRecon: ")
+
     print("\n--- Starting DNSRecon Standard Enumeration ---")
     subprocess.run(["dnsrecon", "-d", domain])
     time.sleep(15)
@@ -57,7 +65,9 @@ def run_dnsrecon(domain):
     subprocess.run(["dnsrecon", "-d", domain, "-D", wordlist_path, "-t", "brt"])
     time.sleep(15)
 
-def run_dnsenum(domain):
+def run_dnsenum():
+    domain = input("Enter the domain for DNSEnum: ")
+
     print("\n--- Starting DNSEnum Standard Enumeration ---")
     subprocess.run(["dnsenum", domain])
     time.sleep(15)
@@ -66,7 +76,9 @@ def run_dnsenum(domain):
     subprocess.run(["dnsenum", domain, "--enum"])
     time.sleep(15)
 
-def run_dirsearch(url):
+def run_dirsearch():
+    url = input("Enter the URL for Dirsearch: ")
+
     wordlist_path = "/usr/share/wordlists/dirsearch/dicc.txt"
     if not os.path.exists(wordlist_path):
         print("\n--- Downloading wordlist for Dirsearch ---")
