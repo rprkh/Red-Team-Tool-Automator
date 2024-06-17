@@ -2,6 +2,7 @@ import subprocess
 import time
 import os
 import urllib.request
+from urllib.error import HTTPError
 
 def run_nmap():
     target = input("Enter the target for Nmap: ")
@@ -59,7 +60,11 @@ def run_dnsrecon():
     if not os.path.exists(wordlist_path):
         print("\n--- Downloading wordlist for DNSRecon Brute Force ---")
         os.makedirs("/usr/share/wordlists/dnsrecon", exist_ok=True)
-        urllib.request.urlretrieve("https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/DNS/subdomains-top1million-110000.txt", wordlist_path)
+        try:
+            urllib.request.urlretrieve("https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/DNS/subdomains-top1million-110000.txt", wordlist_path)
+        except HTTPError as e:
+            print(f"Failed to download wordlist: {e}")
+            return
 
     print("\n--- Starting DNSRecon Brute Force (-D [wordlist] -t brt) ---")
     subprocess.run(["dnsrecon", "-d", domain, "-D", wordlist_path, "-t", "brt"])
@@ -83,7 +88,11 @@ def run_dirsearch():
     if not os.path.exists(wordlist_path):
         print("\n--- Downloading wordlist for Dirsearch ---")
         os.makedirs("/usr/share/wordlists/dirsearch", exist_ok=True)
-        urllib.request.urlretrieve("https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/dicc.txt", wordlist_path)
+        try:
+            urllib.request.urlretrieve("https://raw.githubusercontent.com/danielmiessler/SecLists/master/Discovery/Web-Content/dirsearch.txt", wordlist_path)
+        except HTTPError as e:
+            print(f"Failed to download wordlist: {e}")
+            return
 
     print("\n--- Starting Dirsearch Default Scan ---")
     subprocess.run(["dirsearch", "-u", url, "-w", wordlist_path])
